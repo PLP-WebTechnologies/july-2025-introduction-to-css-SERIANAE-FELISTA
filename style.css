@@ -1,0 +1,110 @@
+/* 1) Base & Resets */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5); /* GAP: space between items (outside each card) */
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line); /* BORDER: adds to visual width when border-box disabled */
+    border-radius: var(--radius);
+    padding: var(--space-5); /* PADDING: inside spacing */
+    /* MARGIN demonstrates outside spacing relative to neighbors */
+    margin: 0; /* try changing to var(--space-3) */
+    box-shadow: 0 6px 14px rgba(26, 33, 52, 0.06);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+}
+
+.card p {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 6) Box Model Playground */
+.box-playground {
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.boxes {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.demo-box {
+    background: var(--accent); /* BACKGROUND shows content box */
+    border: 2px dashed #9bb6ff; /* BORDER consumes space around content (inside total box) */
+    padding: var(--space-4); /* PADDING expands inside box */
+    margin: var(--space-3); /* MARGIN creates space outside the box */
+    min-height: 120px;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 6px;
+    border-radius: 10px;
+}
+
+.demo-box strong {
+    font-size: 1.05rem;
+}
+
+.demo-box .explain {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Variations to compare visual impact */
+.box-a {
+    background: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc; /* Light border */
+    padding: var(--space-4); /* Consistent padding */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.box-b {
+    padding: calc(var(--space-4) + 8px);
+}
+
+.box-c {
+    border-style: solid;
+    border-color: #c7d6ff;
+    margin: calc(var(--space-3) + 8px);
+}
+
+/* 7) Footer */
+.site-footer {
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+}
+
+.site-footer .container {
+    padding-block: var(--space-5);
+    text-align: center;
+    color: var(--muted);
+}
+
+/* 8) Accessibility & Misc */
+:focus-visible {
+    outline: 3px solid #a9c2ff;
+    outline-offset: 3px;
+}
